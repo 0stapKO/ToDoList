@@ -32,8 +32,8 @@
                         {{ task.task }}
                         <span style="position: relative; float: right;">
                             <a class="btn btn-success" href="{% url 'mark_as_done' task.pk %}"><i class="fa fa-check"></i> Mark as Done</a>
-                            <a class="btn btn-danger"><i class="fa fa-trash"></i></a>
-                            <a class="btn btn-primary"><i class="fa fa-pencil"></i></a>
+                            <a class="btn btn-danger" href = "{% url 'delete' task.pk %}"><i class="fa fa-trash"></i></a>
+                            <a class="btn btn-primary" href = "{% url 'edit' task.pk %}"><i class="fa fa-pencil"></i></a>
                         </span>
                     </div>
                 </div>
@@ -47,6 +47,7 @@
                 <div class="card m-1">
                     <div class="card-body">
                         {{ task.task }}
+                        <a style="position: relative; float: right;" class="btn btn-secondary" href="{% url 'back_to_undone' task.pk %}"><i class="fa fa-arrow-left"></i> Back to Undone</a>
                     </div>
                 </div>
                 {% endfor %}
